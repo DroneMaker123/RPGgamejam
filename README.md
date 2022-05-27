@@ -2,7 +2,6 @@
 A game about cute cats made in 44 hours for a game jam.
 
 ## Wytyczne
----
 
 * Gra 3D
 * Wyspa z boiskiem na środku
