@@ -16,9 +16,8 @@ public class CannonControls : MonoBehaviour
     [SerializeField]
     float returnRotationSpeed = 0.05f;
 
-
-    private Vector3 originRotationP1 = new Vector3(0, 90, 0);
-    private Vector3 originRotationP2 = new Vector3(0, -90, 0);
+    private Vector3 originRotationP1 = new Vector3(0, 0, 0);
+    private Vector3 originRotationP2 = new Vector3(0, 180, 0);
 
     private void Start()
     {
@@ -42,11 +41,11 @@ public class CannonControls : MonoBehaviour
         {
             if(Input.GetKey(KeyCode.W))
             {
-                cannonRotation.x += verticalRotationSpeed; 
+                cannonRotation.x -= verticalRotationSpeed; 
             }
             if(Input.GetKey(KeyCode.S))
             {
-                cannonRotation.x -= verticalRotationSpeed;
+                cannonRotation.x += verticalRotationSpeed;
             }
             
             if(Input.GetKey(KeyCode.A))
@@ -63,11 +62,11 @@ public class CannonControls : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                cannonRotation.x += verticalRotationSpeed;
+                cannonRotation.x -= verticalRotationSpeed;
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                cannonRotation.x -= verticalRotationSpeed;
+                cannonRotation.x += verticalRotationSpeed;
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
@@ -87,13 +86,13 @@ public class CannonControls : MonoBehaviour
 
         if(!player2)
         {
-            if (cannonRotation.y > 180) cannonRotation.y = 180;
-            else if (cannonRotation.y < 0) cannonRotation.y = 0;
+            if (cannonRotation.y > 90) cannonRotation.y = 90;
+            else if (cannonRotation.y < -90) cannonRotation.y = -90;
         }
         else
         {
-            if (cannonRotation.y > 0) cannonRotation.y = 0;
-            else if (cannonRotation.y < -180) cannonRotation.y = -180;
+            if (cannonRotation.y > 270) cannonRotation.y = 270;
+            else if (cannonRotation.y < 90) cannonRotation.y = 90;
         }
 
         gameObject.transform.localEulerAngles = cannonRotation; //Sets gameobject rotation

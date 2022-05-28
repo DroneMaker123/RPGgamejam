@@ -14,6 +14,9 @@ public class CannonFiring : MonoBehaviour
     GameObject shootingBallPrefab;
 
     [SerializeField]
+    float firePower = 15.0f;
+
+    [SerializeField]
     float afterFiringDelay = 1.0f;
 
 
@@ -21,7 +24,7 @@ public class CannonFiring : MonoBehaviour
 
     private void Update()
     {
-        inputControls();
+        //inputControls();
     }
 
     IEnumerator fireDelay() 
@@ -52,7 +55,7 @@ public class CannonFiring : MonoBehaviour
         }
     }
 
-    void shoot()
+     public void shoot()
     {
         GameObject shootingBall = Instantiate(
             shootingBallPrefab,
@@ -60,7 +63,7 @@ public class CannonFiring : MonoBehaviour
             Quaternion.identity);
 
         Rigidbody rb = shootingBall.GetComponent<Rigidbody>();
-        rb.AddForce(gameObject.transform.forward*10, ForceMode.Impulse);
+        rb.AddForce(gameObject.transform.forward* firePower, ForceMode.Impulse);
 
         if (player2)
         {

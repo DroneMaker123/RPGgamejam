@@ -92,7 +92,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ee527b3c0a4c2724594ab5ac71c6e706, type: 2}
     - target: {fileID: 919132149155446097, guid: 566f4d7e4d357da4cbb7cb8350e5a58e, type: 3}
       propertyPath: m_Name
-      value: cannon
+      value: cannon Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 566f4d7e4d357da4cbb7cb8350e5a58e, type: 3}
@@ -119,8 +119,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player2: 0
-  horizontalRotationSpeed: 0.3
-  verticalRotationSpeed: 0.2
+  horizontalRotationSpeed: 0.5
+  verticalRotationSpeed: 0.35
+  returnRotationSpeed: 0.2
 --- !u!114 &6938256548589887059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,4 +137,5 @@ MonoBehaviour:
   player2: 0
   firePoint: {fileID: 410237146463500961}
   shootingBallPrefab: {fileID: 8280755499830223580, guid: ccf3a52f806dc634f9bf6e22b663149b, type: 3}
+  firePower: 15
   afterFiringDelay: 1
