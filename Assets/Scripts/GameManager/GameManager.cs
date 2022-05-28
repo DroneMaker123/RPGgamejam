@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     CannonFiring cannonP2;
 
     [SerializeField]
-    float healthLose = 0.5f;
+    float healthLose = 0.0005f;
 
     player Player1 = new player(100, 5, 1); // Holds Player parameters
     player Player2 = new player(100, 5, 1); // health, ballsLeft, afterFireDelay
@@ -30,8 +30,7 @@ public class GameManager : MonoBehaviour
             this.health = health;
             this.ballsLeft = ballsLeft;
             this.canFire = true;
-            this.afterFireDelay = afterFireDelay;
-        }
+            this.afterFireDelay = afterFireDelay;        }
     }
 
 
