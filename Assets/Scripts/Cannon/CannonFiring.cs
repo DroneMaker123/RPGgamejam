@@ -64,6 +64,8 @@ public class CannonFiring : MonoBehaviour
 
         Rigidbody rb = shootingBall.GetComponent<Rigidbody>();
         rb.AddForce(gameObject.transform.forward* firePower, ForceMode.Impulse);
+        if (!player2) rb.transform.Rotate(new Vector3(0, -90, 0));
+        else rb.transform.Rotate(new Vector3(0, 90, 0));
 
         if (player2)
         {
