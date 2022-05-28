@@ -140,6 +140,10 @@ public class GameManager : MonoBehaviour
     {
         Player1.ballsLeft = balls;
     }
+    public int getPlayer1BallsLeft()
+    {
+        return Player1.ballsLeft;
+    }
 
     public float getPlayer2HP()
     {
@@ -154,6 +158,10 @@ public class GameManager : MonoBehaviour
     public void setPlayer2BallsLeft(int balls)
     {
         Player2.ballsLeft = balls;
+    }
+    public int getPlayer2BallsLeft()
+    {
+        return Player2.ballsLeft;
     }
 
 }
