@@ -14,7 +14,7 @@ public class CannonFiring : MonoBehaviour
     GameObject shootingBallPrefab;
 
     [SerializeField]
-    float firePower = 15.0f;
+    float firePower = 20.0f;
 
     [SerializeField]
     float afterFiringDelay = 1.0f;

@@ -10,11 +10,11 @@ public class CannonControls : MonoBehaviour
     Vector3 cannonRotation;
 
     [SerializeField]
-    float horizontalRotationSpeed = 1;
+    float horizontalRotationSpeed = 70;
     [SerializeField]
-    float verticalRotationSpeed = 1;
+    float verticalRotationSpeed = 50;
     [SerializeField]
-    float returnRotationSpeed = 0.05f;
+    float returnRotationSpeed = 25;
 
     private Vector3 originRotationP1 = new Vector3(0, 0, 0);
     private Vector3 originRotationP2 = new Vector3(0, 180, 0);
@@ -41,20 +41,20 @@ public class CannonControls : MonoBehaviour
         {
             if(Input.GetKey(KeyCode.W))
             {
-                cannonRotation.x -= verticalRotationSpeed; 
+                cannonRotation.x -= verticalRotationSpeed * Time.deltaTime; 
             }
             if(Input.GetKey(KeyCode.S))
             {
-                cannonRotation.x += verticalRotationSpeed;
+                cannonRotation.x += verticalRotationSpeed * Time.deltaTime;
             }
             
             if(Input.GetKey(KeyCode.A))
             {
-                cannonRotation.y += horizontalRotationSpeed;
+                cannonRotation.y -= horizontalRotationSpeed * Time.deltaTime;
             }
             if(Input.GetKey(KeyCode.D))
             {
-                cannonRotation.y -= horizontalRotationSpeed;
+                cannonRotation.y += horizontalRotationSpeed * Time.deltaTime;
             }
             
         }
@@ -62,19 +62,19 @@ public class CannonControls : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                cannonRotation.x -= verticalRotationSpeed;
+                cannonRotation.x -= verticalRotationSpeed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                cannonRotation.x += verticalRotationSpeed;
+                cannonRotation.x += verticalRotationSpeed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                cannonRotation.y += horizontalRotationSpeed;
+                cannonRotation.y -= horizontalRotationSpeed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                cannonRotation.y -= horizontalRotationSpeed;
+                cannonRotation.y += horizontalRotationSpeed * Time.deltaTime;
             }
         }
     }
@@ -100,7 +100,7 @@ public class CannonControls : MonoBehaviour
     }
     void returnRotation() //return rotation to originRotation
     {
-        if (!player2) cannonRotation = Vector3.MoveTowards(cannonRotation, originRotationP1, returnRotationSpeed);
-        else cannonRotation = Vector3.MoveTowards(cannonRotation, originRotationP2, returnRotationSpeed);
+        if (!player2) cannonRotation = Vector3.MoveTowards(cannonRotation, originRotationP1, returnRotationSpeed * Time.deltaTime);
+        else cannonRotation = Vector3.MoveTowards(cannonRotation, originRotationP2, returnRotationSpeed * Time.deltaTime);
     }
 }
