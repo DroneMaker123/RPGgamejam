@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
 
         if (Player1.ballsLeft > 0 && Input.GetKeyDown(KeyCode.Space) && Player1.canFire)
         {
+            FindObjectOfType<AudioManager>().Play("Kaboom");
             Player1.canFire = false;
             cannonP1.shoot();
             StartCoroutine(fireDelayP1(Player1.afterFireDelay));
@@ -73,6 +74,7 @@ public class GameManager : MonoBehaviour
 
         if (Player2.ballsLeft > 0 && Input.GetKeyDown(KeyCode.KeypadEnter) && Player2.canFire)
         {
+            FindObjectOfType<AudioManager>().Play("Kaboom");
             Player2.canFire = false;
             cannonP2.shoot();
             StartCoroutine(fireDelayP2(Player2.afterFireDelay));
