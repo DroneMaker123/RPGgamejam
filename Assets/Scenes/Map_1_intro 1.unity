@@ -1165,7 +1165,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Kaboom
     clip: {fileID: 8300000, guid: d4aee29185389894b9cc0d8873904a49, type: 3}
-    volume: 0.4
+    volume: 0.15
     pitch: 1
     loop: 0
     source: {fileID: 0}
