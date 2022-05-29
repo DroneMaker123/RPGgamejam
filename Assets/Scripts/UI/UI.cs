@@ -33,16 +33,19 @@ public class UI : MonoBehaviour
 
     void MenuClicked()
     {
+        FindObjectOfType<AudioManager>().Play("UI_Sound");
         SceneManager.LoadScene("Menu");
     }
 
     void ResetClicked()
     {
+        FindObjectOfType<AudioManager>().Play("UI_Sound");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void ExitClicked()
     {
+        FindObjectOfType<AudioManager>().Play("UI_Sound");
         Application.Quit();
     }
 
