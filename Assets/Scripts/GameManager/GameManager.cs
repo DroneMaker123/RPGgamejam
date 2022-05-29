@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
             Player1.ballsLeft--;
         }
 
-        if (Player2.ballsLeft > 0 && Input.GetKeyDown(KeyCode.KeypadEnter) && Player2.canFire)
+        if (Player2.ballsLeft > 0 && (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return)) && Player2.canFire)
         {
             FindObjectOfType<AudioManager>().Play("Kaboom");
             Player2.canFire = false;
